@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles/index&register.css" />
+        <link rel="stylesheet" href="./fonts/font-awesome.min.css" />
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <section id="content">
+                <form autocomplete="off" id="loginForm">
+                    <h1>Login</h1>
+                    <div class="input-container">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <input
+                            type="text"
+                            placeholder="Email"
+                            id="email"
+                        />
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+
+                        <input
+                            type="password"
+                            placeholder="Password"
+                            id="password"
+                        />
+                    </div>
+                    <div>
+                        <input type="submit" value="Log in" />
+                        <a href="./pages/register.html">Register</a>
+                    </div>
+                </form>
+                <div id="errorMessage">error</div>
+            </section>
+        </div>
+        <script type="module" src="./scripts/login.js"></script>
+    </body>
+</html>
