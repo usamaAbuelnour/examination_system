@@ -1,4 +1,3 @@
-
 export class Question {
     constructor(text, answers, correctAnswerIndex) {
         this.text = text;
@@ -49,12 +48,24 @@ export class Quiz {
 
     calculateScore() {
         let score = 0;
-        this.questions.forEach(question => {
+        this.questions.forEach((question) => {
             if (question.isCorrect()) {
                 score++;
             }
         });
         return score;
+    }
+
+    isCompleted() {
+        return !this.questions.some(
+            (question) => question.selectedAnswer === null
+        );
+    }
+
+    getUnsolvedQuestionIndex() {
+        return this.questions.findIndex(
+            (question) => question.selectedAnswer === null
+        );
     }
 }
 
@@ -64,6 +75,3 @@ export class Answer {
         this.isCorrect = isCorrect;
     }
 }
-
-
-

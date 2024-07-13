@@ -3,7 +3,6 @@
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
     vertical-align: baseline;
     background: transparent;
 }
@@ -16,61 +15,8 @@ body {
     padding: 0;
     position: relative;
 }
-h1 {
-    font-size: 28px;
-}
-h2 {
-    font-size: 26px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 12px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #563d64;
-}
-small {
-    font-size: 10px;
-}
-b,
-strong {
-    font-weight: bold;
-}
-a {
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-    color: green;
-}
-.left {
-    float: left;
-}
-.right {
-    float: right;
-}
-.alignleft {
-    float: left;
-    margin-right: 15px;
-}
-.alignright {
-    float: right;
-    margin-left: 15px;
-}
-.clearfix:after,
+
+
 form:after {
     content: ".";
     display: block;
@@ -78,11 +24,8 @@ form:after {
     clear: both;
     visibility: hidden;
 }
-.container {
-    /* border: solid;
-    margin: 25px auto; */
+.form-container {
     position: relative;
-    /* width: 900px; */
 }
 #content {
     background: #f9f9f9;
@@ -127,7 +70,6 @@ form:after {
     position: relative;
     text-align: center;
     text-shadow: 0 1px 0 #fff;
-    /* width: 400px; */
     width: 70%;
 }
 #content h1 {
@@ -203,6 +145,11 @@ form:after {
         rgba(255, 255, 255, 1) 100%
     );
     left: 0;
+}
+
+#content h3 {
+    color: #7e7e7e;
+
 }
 
 #content:after,
@@ -310,7 +257,6 @@ form:after {
     box-shadow: 0 0 2px red inset !important;
     border-color: red !important;
 }
-/* .input-container > * {border: solid red;} */
 
 .onFocus {
     -webkit-box-shadow: 0 0 2px #0d6efd inset !important;
@@ -411,21 +357,33 @@ form:after {
     text-decoration: underline;
 }
 
-#errorMessage {
-    border: outset 2px rgb(129, 4, 4);
+#errorContainer {
     border-radius: 5px;
     display: inline-block;
-    padding: 0.3em 0.5em;
     position: relative;
     bottom: 0.5em;
     font-size: 1rem;
     color: rgb(255, 0, 0);
-    visibility: hidden;
     text-transform: lowercase;
     font-weight: bold;
 }
 
+#spinner {
+    display: none;
+    color: #bbb;
+}
 
+#result-section, #time-out {
+    position: relative;
+    /* border: solid; */
+    height: 50vh;
+}
+
+#time-out i {
+    font-size: 1.5rem;
+    position: relative;
+    top: 3px;
+}
 
 @media (min-width: 576px) {
     #content {

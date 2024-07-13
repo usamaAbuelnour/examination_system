@@ -3,22 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./styles/index&register.css" />
+        <link rel="stylesheet" href="./styles/bootstrap.min.css" />
         <link rel="stylesheet" href="./fonts/font-awesome.min.css" />
+        <link rel="stylesheet" href="./styles/index&register.css" />
         <title>Login</title>
     </head>
     <body>
-        <div class="container">
+        <div class="form-container">
             <section id="content">
                 <form autocomplete="off" id="loginForm">
                     <h1>Login</h1>
                     <div class="input-container">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <input
-                            type="text"
-                            placeholder="Email"
-                            id="email"
-                        />
+                        <input type="text" placeholder="Email" id="email" />
                     </div>
                     <div class="input-container">
                         <i class="fa fa-lock" aria-hidden="true"></i>
@@ -34,7 +31,12 @@
                         <a href="./pages/register.html">Register</a>
                     </div>
                 </form>
-                <div id="errorMessage">error</div>
+                <div id="errorContainer">
+                    <p id="errorMessage"></p>
+                    <div id="spinner" class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
             </section>
         </div>
         <script type="module" src="./scripts/login.js"></script>
