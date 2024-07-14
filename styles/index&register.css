@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +18,23 @@ body {
     margin: 0 auto;
     padding: 0;
     position: relative;
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #1899d6;
+        border-radius: 10px;
+    }
 }
 
 form:after {
@@ -376,49 +394,39 @@ form:after {
 
 #content {
     /* border: solid; */
-    width: 90%;
+    width: 80%;
+    padding: 1.5em 0;
 }
 
 #exam {
     /* border: solid; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    row-gap: 0.8em;
-    /* align-items: center; */
-    padding: 1em 0.5em
+    padding: 0 0.5em;
+    position: relative;
 }
 #exam > * {
     /* border: solid red; */
 }
 
-#timer {
-    border: outset 7px #1899D6;
-    width: 75px;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    padding: 0.3em;
-    align-self: center;
+#content #timer {
     font-family: "Orbitron", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
+    position: relative;
 }
 
 #quiz-section {
+    /* border: solid; */
     /* width: 70%; */
     text-align: left;
     display: flex;
     flex-direction: column;
-    row-gap: 1em;
+    row-gap: 2em;
+    /* padding: 0 1em; */
 }
 
 #question {
-    border: solid;
+    /* border: solid; */
     font-size: 1.2rem;
     font-weight: 700;
+    height: 50px;
 }
 
 #answers {
@@ -429,10 +437,6 @@ form:after {
 #answers > * {
     border: solid 2px;
     border-radius: 4px;
-    /* font-size: 0.8rem; */
-    /* display: flex; */
-    /* justify-content: center; */
-    /* text-align: center; */
     width: 50%;
     margin: 0 auto;
     padding: 0.5em 0.3em;
@@ -461,47 +465,50 @@ form:after {
     place-content: center;
 }
 
-input::before {
+#answers input::before {
     content: "";
     width: 0.65em;
     height: 0.65em;
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em rebeccapurple;
+    box-shadow: inset 1em 1em #1899d6;
     background-color: CanvasText;
 }
-input:checked::before {
+#answers input:checked::before {
     transform: scale(1);
 }
 
-input:focus {
+#answers input:focus {
     outline: max(2px, 0.15em) solid currentColor;
     outline-offset: max(2px, 0.15em);
 }
 #answers label:focus-within {
-    color: rebeccapurple;
+    color: #1899d6;
 }
 
 .btn-container {
     /* border: solid; */
     display: flex;
-    column-gap: 1em;
+    justify-content: space-around;
 }
 
-.btn-container button {
+#content button,
+#question-number {
+    /* width: 17%; */
+
     appearance: button;
-    background-color: #1899D6;
+    background-color: #1899d6;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: .8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
     line-height: 20px;
     margin: 0;
     outline: none;
@@ -511,17 +518,17 @@ input:focus {
     text-transform: uppercase;
     touch-action: manipulation;
     transform: translateZ(0);
-    transition: filter .2s;
+    transition: filter 0.2s;
     user-select: none;
     -webkit-user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-    width: 100%;
 }
 
-.btn-container button:after {
+#content button:after,
+#question-number:after {
     background-clip: padding-box;
-    background-color: #1CB0F6;
+    background-color: #1cb0f6;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -532,60 +539,97 @@ input:focus {
     right: 0;
     top: 0;
     z-index: -1;
-  }
-  
-  .btn-container button:main,
-  .btn-container button:focus {
-    user-select: auto;
-  }
-  
-  .btn-container button:hover:not(:disabled) {
-    filter: brightness(1.1);
-    -webkit-filter: brightness(1.1);
-  }
-  
-  .btn-container button:disabled {
-    cursor: auto;
-  }
-  
-  .btn-container button:active {
-    border-width: 4px 0 0;
-    background: none;
-  }
-  
-  .btn-container button:disabled {
-    cursor: default;
-  }
-  
-  .btn-container button:focus {
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
-  }
-
-
-.markside {
-    border: inset 1px;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-    margin-top: 1em;
 }
 
+#content button:main,
+#content button:focus {
+    user-select: auto;
+}
 
+#content button:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
 
+#content button:active:not(:disabled) {
+    border-width: 4px 0 0;
+    background: none;
+}
 
+#content button:disabled {
+    cursor: not-allowed;
+    background-color: darkgray;
+}
+#content button:disabled::after {
+    background-color: lightgray;
+}
 
+#content button:focus {
+    box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+        rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+        rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
 
+#question-number {
+    cursor: default;
+    width: 30px;
+    background-color: hsl(0, 50%, 50%);
+}
+#question-number::after {
+    background-color: red;
+}
 
+.markside {
+    text-align: start;
+    border: inset 1px;
+    border-radius: 4px;
+    background-color: #f3f3f3;
+    margin: 1em 0.5em;
+    padding: 0.5em;
+    display: none;
+    height: 250px;
+    overflow: auto;
+}
 
+.markside div {
+    /* border: solid red; */
 
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    padding: 1.4em;
+}
+.markside div:not(div:last-child) {
+    border-bottom: solid 1px #999;
+}
 
+.markside div p {
+    border: inset 3px;
+    border-radius: 4px;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+    font-weight: 500;
+}
+.markside div p:hover {
+    border-color: #1899d6;
+}
 
-
+#content .markside div button {
+    font-size: 1.3rem;
+    background-color: hsl(0, 50%, 50%);
+    cursor: pointer;
+    width: 50%;
+    align-self: center;
+}
+#content .markside button:after {
+    background-color: red;
+}
 
 #result-section,
 #time-out {
     position: relative;
-    /* border: solid; */
-    height: 50vh;
+    line-height: 10;
+    font-size: 1.2rem;
 }
 
 #time-out i {
@@ -594,32 +638,79 @@ input:focus {
     top: 3px;
 }
 
-
-
-
-
-
-
-
-
-
-/* @media (min-width: 576px) {
+@media (min-width: 450px) {
     #content {
-        width: 60%;
+        /* width: 70%; */
+    }
+    #content button,
+    #question-number {
+        width: 21%;
+    }
+    #question-number {
+        width: 40px;
+    }
+}
+@media (min-width: 576px) {
+    #content {
+        width: 80%;
+    }
+    #content button,
+    #question-number {
+        width: 17%;
+    }
+    #question-number {
+        width: 50px;
     }
 }
 @media (min-width: 768px) {
     #content {
-        width: 50%;
+        width: 70%;
+    }
+    #content button,
+    #question-number {
+        /* width: 17%; */
+        font-size: 0.9rem;
+    }
+    #question-number {
+        width: 50px;
     }
 }
 @media (min-width: 992px) {
     #content {
-        width: 40%;
+        width: 70%;
+    }
+    #exam-wrapper {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 0.5em
+    }
+    #exam {
+        width: 60%;;
+    }
+    .markside {
+        margin: 0;
+        height: 408px;
+        width: 35%;
+    }
+    .markside div {
+        padding: 1.4em 0.9em;
+    }
+    #exam button,
+    #question-number {
+        width: 20%;
+        font-size: 1rem;
+    }
+    #question-number {
+        width: 50px;
     }
 }
 @media (min-width: 1200px) {
     #content {
-        width: 30%;
+        /* width: 70%; */
     }
-} */
+}
+@media (min-width: 1400px) {
+    #content {
+        width: 60%;
+    }
+}
