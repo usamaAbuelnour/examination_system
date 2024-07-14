@@ -14,7 +14,7 @@ let quizTimer;
 function startTimer() {
     let endTime = Date.now() + quizTimeLimit * 60 * 1000;
 
-    timerDisplay.textContent = `Time : ${quizTimeLimit - 1}m 59s`;
+    timerDisplay.textContent = `${quizTimeLimit - 1} : 59`;
 
     quizTimer = setInterval(() => {
         let remainingTime = endTime - Date.now();
@@ -25,7 +25,9 @@ function startTimer() {
         } else {
             let minutes = Math.floor(remainingTime / 60000);
             let seconds = Math.floor((remainingTime % 60000) / 1000);
-            timerDisplay.textContent = `Time : ${minutes}m ${seconds}s`;
+            timerDisplay.textContent = `${
+                minutes < 10 ? `0${minutes}` : minutes
+            } : ${seconds < 10 ? `0${seconds}` : seconds}`;
         }
     }, 1000);
 }
@@ -41,13 +43,13 @@ function displayCurrentQuestion() {
     const currentQuestion = quiz.getCurrentQuestion();
     const questionIndex = quiz.getCurrentQuestionIndex() + 1;
     console.log(currentQuestion);
-    questionDisplay.innerHTML = `Question ${questionIndex}: ${currentQuestion.text}<br><br>`;
+    questionDisplay.innerHTML = `${currentQuestion.text}<br><br>`;
     answersForm.innerHTML = "";
 
     currentQuestion.answers.forEach((answer, index) => {
         const answerElement = document.createElement("label");
         const radioInput = document.createElement("input");
-        answerElement.style.marginBottom = "10px";
+        // answerElement.style.marginBottom = "10px";
         radioInput.type = "radio";
         radioInput.name = "answer";
         radioInput.value = index;
@@ -64,7 +66,7 @@ function displayCurrentQuestion() {
         answerElement.appendChild(document.createTextNode(answer.text));
 
         answersForm.appendChild(answerElement);
-        answersForm.appendChild(document.createElement("br"));
+        // answersForm.appendChild(document.createElement("br"));
     });
 }
 
@@ -185,6 +187,7 @@ const question1 = new Question(
         new Answer("Buenos Aires", true),
         new Answer("London", false),
         new Answer("Berlin", false),
+        new Answer("Cairo", false),
     ],
     0
 );
@@ -196,21 +199,23 @@ const question2 = new Question(
         new Answer("Harper Lee", true),
         new Answer("J.K. Rowling", false),
         new Answer("Charles Dickens", false),
+        new Answer("Bruce Wayne", false),
     ],
     0
 );
 quiz.addQuestion(question2);
 
-// const question3 = new Question(
-//     "What is the largest planet in our solar system?",
-//     [
-//         new Answer("Earth", false),
-//         new Answer("Jupiter", true),
-//         new Answer("Mars", false),
-//     ],
-//     1
-// );
-// quiz.addQuestion(question3);
+const question3 = new Question(
+    "What is the largest planet in our solar system?",
+    [
+        new Answer("Earth", false),
+        new Answer("Jupiter", true),
+        new Answer("Mars", false),
+        new Answer("Venus", false),
+    ],
+    1
+);
+quiz.addQuestion(question3);
 
 // const question4 = new Question(
 //     "What is the boiling point of water in Celsius?",
