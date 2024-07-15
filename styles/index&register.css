@@ -627,15 +627,19 @@ form:after {
 
 #result-section,
 #time-out {
+    /* border: solid; */
     position: relative;
-    line-height: 10;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 #time-out i {
     font-size: 1.5rem;
     position: relative;
     top: 3px;
+}
+
+#result-section h3, #time-out h3 {
+    margin: 3em 1em;
 }
 
 @media (min-width: 450px) {
