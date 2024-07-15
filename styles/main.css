@@ -10,9 +10,9 @@
     background: transparent;
     font-family: "Fira Sans Condensed", sans-serif;
 }
+
 body {
-    background: #dcdddf
-        url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
+    background: #dcdddf url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
     color: #000;
     font: 14px Arial;
     margin: 0 auto;
@@ -44,38 +44,30 @@ form:after {
     clear: both;
     visibility: hidden;
 }
+
 .form-container {
     position: relative;
 }
+
 #content {
     background: #f9f9f9;
-    background: -moz-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: -o-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: -ms-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
+    background: -moz-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: -webkit-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: -o-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: -ms-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#f9f9f9', GradientType=0);
 
     -webkit-box-shadow: 0 1px 0 #fff inset;
     -moz-box-shadow: 0 1px 0 #fff inset;
@@ -92,6 +84,7 @@ form:after {
     text-shadow: 0 1px 0 #fff;
     width: 70%;
 }
+
 #content h1 {
     color: #7e7e7e;
     font: bold 25px Helvetica, Arial, sans-serif;
@@ -99,6 +92,7 @@ form:after {
     line-height: 20px;
     margin: 10px 0 30px;
 }
+
 #content h1:before,
 #content h1:after {
     content: "";
@@ -110,60 +104,41 @@ form:after {
 
 #content h1:after {
     background: rgb(126, 126, 126);
-    background: -moz-linear-gradient(
-        left,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        left,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: -o-linear-gradient(
-        left,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: -ms-linear-gradient(
-        left,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: linear-gradient(
-        left,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
+    background: -moz-linear-gradient(left,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(left,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: -o-linear-gradient(left,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: -ms-linear-gradient(left,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(left,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
     right: 0;
 }
+
 #content h1:before {
     background: rgb(126, 126, 126);
-    background: -moz-linear-gradient(
-        right,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        right,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: -o-linear-gradient(
-        right,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: -ms-linear-gradient(
-        right,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
-    background: linear-gradient(
-        right,
-        rgba(126, 126, 126, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
-    );
+    background: -moz-linear-gradient(right,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(right,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: -o-linear-gradient(right,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: -ms-linear-gradient(right,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(right,
+            rgba(126, 126, 126, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
     left: 0;
 }
 
@@ -174,32 +149,22 @@ form:after {
 #content:after,
 #content:before {
     background: #f9f9f9;
-    background: -moz-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: -o-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: -ms-linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    background: linear-gradient(
-        top,
-        rgba(248, 248, 248, 1) 0%,
-        rgba(249, 249, 249, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );
+    background: -moz-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: -webkit-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: -o-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: -ms-linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    background: linear-gradient(top,
+            rgba(248, 248, 248, 1) 0%,
+            rgba(249, 249, 249, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f8f8f8', endColorstr='#f9f9f9', GradientType=0);
     border: 1px solid #c4c6ca;
     content: "";
     display: block;
@@ -208,6 +173,7 @@ form:after {
     left: -1px;
     width: 100%;
 }
+
 #content:after {
     -webkit-transform: rotate(2deg);
     -moz-transform: rotate(2deg);
@@ -217,6 +183,7 @@ form:after {
     top: 0;
     z-index: -1;
 }
+
 #content:before {
     -webkit-transform: rotate(-3deg);
     -moz-transform: rotate(-3deg);
@@ -226,10 +193,12 @@ form:after {
     top: 0;
     z-index: -2;
 }
+
 #content form {
     margin: 0 20px;
     position: relative;
 }
+
 #content form .input-container {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -262,6 +231,7 @@ form:after {
     color: #bbb;
     width: 8%;
 }
+
 .input-container input {
     color: #777;
     font: 13px Helvetica, Arial, sans-serif;
@@ -290,32 +260,22 @@ form:after {
 
 #content form input[type="submit"] {
     background: rgb(254, 231, 154);
-    background: -moz-linear-gradient(
-        top,
-        rgba(254, 231, 154, 1) 0%,
-        rgba(254, 193, 81, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        top,
-        rgba(254, 231, 154, 1) 0%,
-        rgba(254, 193, 81, 1) 100%
-    );
-    background: -o-linear-gradient(
-        top,
-        rgba(254, 231, 154, 1) 0%,
-        rgba(254, 193, 81, 1) 100%
-    );
-    background: -ms-linear-gradient(
-        top,
-        rgba(254, 231, 154, 1) 0%,
-        rgba(254, 193, 81, 1) 100%
-    );
-    background: linear-gradient(
-        top,
-        rgba(254, 231, 154, 1) 0%,
-        rgba(254, 193, 81, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );
+    background: -moz-linear-gradient(top,
+            rgba(254, 231, 154, 1) 0%,
+            rgba(254, 193, 81, 1) 100%);
+    background: -webkit-linear-gradient(top,
+            rgba(254, 231, 154, 1) 0%,
+            rgba(254, 193, 81, 1) 100%);
+    background: -o-linear-gradient(top,
+            rgba(254, 231, 154, 1) 0%,
+            rgba(254, 193, 81, 1) 100%);
+    background: -ms-linear-gradient(top,
+            rgba(254, 231, 154, 1) 0%,
+            rgba(254, 193, 81, 1) 100%);
+    background: linear-gradient(top,
+            rgba(254, 231, 154, 1) 0%,
+            rgba(254, 193, 81, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fee79a', endColorstr='#fec151', GradientType=0);
 
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -338,36 +298,52 @@ form:after {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
     width: 120px;
 }
+
 #content form input[type="submit"]:hover {
     background: rgb(254, 193, 81);
-    background: -moz-linear-gradient(
-        top,
-        rgba(254, 193, 81, 1) 0%,
-        rgba(254, 231, 154, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        top,
-        rgba(254, 193, 81, 1) 0%,
-        rgba(254, 231, 154, 1) 100%
-    );
-    background: -o-linear-gradient(
-        top,
-        rgba(254, 193, 81, 1) 0%,
-        rgba(254, 231, 154, 1) 100%
-    );
-    background: -ms-linear-gradient(
-        top,
-        rgba(254, 193, 81, 1) 0%,
-        rgba(254, 231, 154, 1) 100%
-    );
-    background: linear-gradient(
-        top,
-        rgba(254, 193, 81, 1) 0%,
-        rgba(254, 231, 154, 1) 100%
-    );
+    background: -moz-linear-gradient(top,
+            rgba(254, 193, 81, 1) 0%,
+            rgba(254, 231, 154, 1) 100%);
+    background: -webkit-linear-gradient(top,
+            rgba(254, 193, 81, 1) 0%,
+            rgba(254, 231, 154, 1) 100%);
+    background: -o-linear-gradient(top,
+            rgba(254, 193, 81, 1) 0%,
+            rgba(254, 231, 154, 1) 100%);
+    background: -ms-linear-gradient(top,
+            rgba(254, 193, 81, 1) 0%,
+            rgba(254, 231, 154, 1) 100%);
+    background: linear-gradient(top,
+            rgba(254, 193, 81, 1) 0%,
+            rgba(254, 231, 154, 1) 100%);
 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fec151', endColorstr='#fee79a', GradientType=0);
 }
+
+#content form div a#Register {
+
+    font-size: 14px;
+    text-decoration: none;
+    border: 2px solid;
+    border: 1px solid #d69e31;
+    padding: 5px;
+    border-radius: 72px;
+    color: #622222e6;
+
+}
+
+#content form div a.have-account {
+    font-size: 13px;
+    text-decoration: none;
+    border: 2px solid;
+    border: .5px solid #d69e31;
+    padding: 5px;
+    border-radius: 72px;
+    color: #622222e6;
+}
+
+
+
 #content form div a {
     color: #004a80;
     float: right;
@@ -403,7 +379,8 @@ form:after {
     padding: 0 0.5em;
     position: relative;
 }
-#exam > * {
+
+#exam>* {
     /* border: solid red; */
 }
 
@@ -434,14 +411,16 @@ form:after {
     display: grid;
     row-gap: 1.2em;
 }
-#answers > * {
-    border: solid 2px;
+
+#answers>* {
+    border: solid 1px;
     border-radius: 4px;
     width: 50%;
     margin: 0 auto;
     padding: 0.5em 0.3em;
     cursor: pointer;
 }
+
 #answers label {
     font-size: 1rem;
     font-weight: 500;
@@ -450,6 +429,7 @@ form:after {
     grid-template-columns: 1em auto;
     gap: 0.8em;
 }
+
 #answers input {
     appearance: none;
     background-color: #fff;
@@ -475,6 +455,7 @@ form:after {
     box-shadow: inset 1em 1em #1899d6;
     background-color: CanvasText;
 }
+
 #answers input:checked::before {
     transform: scale(1);
 }
@@ -483,6 +464,7 @@ form:after {
     outline: max(2px, 0.15em) solid currentColor;
     outline-offset: max(2px, 0.15em);
 }
+
 #answers label:focus-within {
     color: #1899d6;
 }
@@ -525,6 +507,20 @@ form:after {
     white-space: nowrap;
 }
 
+#content button.mark,
+#content button.next,
+#content button.previous {
+    background-color: #eceeef00;
+    color: #000000de;
+    border: 1px solid #1cb0f6;
+}
+
+#content button.mark:after,
+#content button.next:after,
+#content button.previous:after {
+    background-color: #fafdff00;
+}
+
 #content button:after,
 #question-number:after {
     background-clip: padding-box;
@@ -558,13 +554,17 @@ form:after {
 
 #content button:disabled {
     cursor: not-allowed;
-    background-color: darkgray;
-}
-#content button:disabled::after {
-    background-color: lightgray;
+    background-color: rgba(169, 169, 169, 0.653);
+    color: #000;
+    /* border: 1px solid #1cb0f6; */
+
 }
 
-#content button:focus {
+#content button:disabled::after {
+    background-color: rgba(211, 211, 211, 0.749);
+}
+
+#content button:hover {
     box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
         rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
         rgba(50, 151, 211, 0.3) 0 0 0 4px;
@@ -573,10 +573,13 @@ form:after {
 #question-number {
     cursor: default;
     width: 30px;
-    background-color: hsl(0, 50%, 50%);
+    color: black;
+    font-size: 14px;
+    background-color: hsla(0, 100%, 99%, 0);
 }
+
 #question-number::after {
-    background-color: red;
+    background-color: rgba(245, 237, 237, 0);
 }
 
 .markside {
@@ -599,6 +602,7 @@ form:after {
     row-gap: 1em;
     padding: 1.4em;
 }
+
 .markside div:not(div:last-child) {
     border-bottom: solid 1px #999;
 }
@@ -610,17 +614,19 @@ form:after {
     cursor: pointer;
     font-weight: 500;
 }
+
 .markside div p:hover {
     border-color: #1899d6;
 }
 
 #content .markside div button {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     background-color: hsl(0, 50%, 50%);
     cursor: pointer;
-    width: 50%;
+    width: 20%;
     align-self: center;
 }
+
 #content .markside button:after {
     background-color: red;
 }
@@ -638,81 +644,112 @@ form:after {
     top: 3px;
 }
 
-#result-section h3, #time-out h3 {
+#result-section h3,
+#time-out h3 {
     margin: 3em 1em;
 }
 
 @media (min-width: 450px) {
-    #content {
-        /* width: 70%; */
+     
+    .btn-container button {
+        font-size: 12px;
     }
+
     #content button,
     #question-number {
-        width: 21%;
+        font-size:.6rem;
     }
+    
+     #content {
+        /* width: 70%; */
+    }
+
+    #content button,
+    #question-number {
+        width: 18%;
+
+    }
+
     #question-number {
         width: 40px;
     }
 }
+
 @media (min-width: 576px) {
     #content {
         width: 80%;
     }
+
     #content button,
     #question-number {
         width: 17%;
+        font-size: .6rem;
+
     }
+
     #question-number {
         width: 50px;
     }
 }
+
 @media (min-width: 768px) {
     #content {
         width: 70%;
     }
+
     #content button,
     #question-number {
-        /* width: 17%; */
         font-size: 0.9rem;
     }
+
     #question-number {
         width: 50px;
     }
 }
+
 @media (min-width: 992px) {
     #content {
         width: 70%;
     }
+
     #exam-wrapper {
         display: flex;
         justify-content: space-around;
         padding: 0 0.5em
     }
+
     #exam {
-        width: 60%;;
+        width: 60%;
+        ;
     }
+
     .markside {
         margin: 0;
         height: 408px;
         width: 35%;
     }
+
     .markside div {
         padding: 1.4em 0.9em;
     }
+
     #exam button,
     #question-number {
         width: 20%;
         font-size: 1rem;
     }
+
     #question-number {
         width: 50px;
     }
 }
+
 @media (min-width: 1200px) {
     #content {
         /* width: 70%; */
     }
 }
+
 @media (min-width: 1400px) {
     #content {
         width: 60%;
