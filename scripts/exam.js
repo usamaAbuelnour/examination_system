@@ -12,6 +12,8 @@ let numOfMarkedQuestion = 0;
 const quizTimeLimit = 20;
 let quizTimer;
 
+
+
 function startTimer() {
     let endTime = Date.now() + quizTimeLimit * 60 * 1000;
 
@@ -26,9 +28,8 @@ function startTimer() {
         } else {
             let minutes = Math.floor(remainingTime / 60000);
             let seconds = Math.floor((remainingTime % 60000) / 1000);
-            timerDisplay.textContent = `${
-                minutes < 10 ? `0${minutes}` : minutes
-            } : ${seconds < 10 ? `0${seconds}` : seconds}`;
+            timerDisplay.textContent = `${minutes < 10 ? `0${minutes}` : minutes
+                } : ${seconds < 10 ? `0${seconds}` : seconds}`;
         }
     }, 1000);
 }
@@ -109,9 +110,8 @@ markButton.addEventListener("click", () => {
     const unmarkButton = document.createElement("button");
     unmarkButton.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
 
-    questionText.textContent = `Question ${currentQuestionIndex + 1}: ${
-        currentQuestion.text
-    }`;
+    questionText.textContent = `Question ${currentQuestionIndex + 1}: ${currentQuestion.text
+        }`;
     questionText.classList.add("marked-question");
     questionText.setAttribute("data-question-index", currentQuestionIndex);
     questionText.addEventListener("click", () => {
@@ -151,7 +151,6 @@ function finishQuiz() {
     sessionStorage.setItem("result", `${score} / ${quiz.questions.length}`);
     location.replace("../pages/result.html");
 
-    // sessionStorage.setItem("quizCompleted", "true");
 }
 
 function displayMarkedQuestion(questionIndex) {
@@ -160,6 +159,7 @@ function displayMarkedQuestion(questionIndex) {
 }
 
 window.onload = function () {
+
     const quizCompleted = sessionStorage.getItem("quizCompleted");
     if (quizCompleted === "true") {
         finishQuiz();
