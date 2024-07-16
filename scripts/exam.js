@@ -4,32 +4,45 @@ const quiz = new Quiz();
 const questionDisplay = document.getElementById("question");
 const answersForm = document.getElementById("answers");
 const markedQuestions = document.querySelector("aside");
-const quizSection = document.getElementById("quiz-section");
 const timerDisplay = document.getElementById("timer");
 const questoinNumber = document.getElementById("question-number");
 let numOfMarkedQuestion = 0;
 
-const quizTimeLimit = 20;
+const quizTimeLimit = 10;
 let quizTimer;
 
-
-
 function startTimer() {
-    let endTime = Date.now() + quizTimeLimit * 60 * 1000;
+    let endTime = sessionStorage.getItem("endTime")
+        ? sessionStorage.getItem("endTime")
+        : Date.now() + quizTimeLimit * 60 * 1000;
 
-    timerDisplay.textContent = `${quizTimeLimit - 1} : 59`;
+    let remainingTime = endTime - Date.now();
+    let minutes = Math.floor(remainingTime / 60000);
+    let seconds = Math.floor((remainingTime % 60000) / 1000);
+
+    timerDisplay.textContent = sessionStorage.getItem("endTime")
+        ? `${minutes < 10 ? `0${minutes}` : minutes} : ${
+              seconds < 10 ? `0${seconds}` : seconds
+          }`
+        : `${
+              quizTimeLimit - 1 < 10
+                  ? `0${quizTimeLimit - 1}`
+                  : quizTimeLimit - 1
+          } : 59`;
+
+    sessionStorage.setItem("endTime", endTime);
 
     quizTimer = setInterval(() => {
-        let remainingTime = endTime - Date.now();
+        remainingTime = endTime - Date.now();
         if (remainingTime <= 0) {
-            clearInterval(quizTimer);
             finishQuiz();
             location.replace("../pages/timeOut.html");
         } else {
-            let minutes = Math.floor(remainingTime / 60000);
-            let seconds = Math.floor((remainingTime % 60000) / 1000);
-            timerDisplay.textContent = `${minutes < 10 ? `0${minutes}` : minutes
-                } : ${seconds < 10 ? `0${seconds}` : seconds}`;
+            minutes = Math.floor(remainingTime / 60000);
+            seconds = Math.floor((remainingTime % 60000) / 1000);
+            timerDisplay.textContent = `${
+                minutes < 10 ? `0${minutes}` : minutes
+            } : ${seconds < 10 ? `0${seconds}` : seconds}`;
         }
     }, 1000);
 }
@@ -110,8 +123,9 @@ markButton.addEventListener("click", () => {
     const unmarkButton = document.createElement("button");
     unmarkButton.innerHTML = `<i class="fa fa-trash" aria-hidden="true"></i>`;
 
-    questionText.textContent = `Question ${currentQuestionIndex + 1}: ${currentQuestion.text
-        }`;
+    questionText.textContent = `Question ${currentQuestionIndex + 1}: ${
+        currentQuestion.text
+    }`;
     questionText.classList.add("marked-question");
     questionText.setAttribute("data-question-index", currentQuestionIndex);
     questionText.addEventListener("click", () => {
@@ -120,7 +134,6 @@ markButton.addEventListener("click", () => {
 
     numOfMarkedQuestion++;
     if (numOfMarkedQuestion === 1) markedQuestions.style.display = "block";
-
 
     unmarkButton.addEventListener("click", () => {
         numOfMarkedQuestion--;
@@ -136,21 +149,21 @@ markButton.addEventListener("click", () => {
 });
 
 finishButton.addEventListener("click", () => {
-    if (quiz.isCompleted()) finishQuiz();
-    else {
+    if (quiz.isCompleted()) {
+        finishQuiz();
+        location.replace("../pages/result.html");
+    } else {
         quiz.setCurrentQuestionIndex(quiz.getUnsolvedQuestionIndex());
         displayCurrentQuestion();
     }
 });
 
-
 function finishQuiz() {
     clearInterval(quizTimer);
+    sessionStorage.removeItem("endTime");
 
     const score = quiz.calculateScore();
     sessionStorage.setItem("result", `${score} / ${quiz.questions.length}`);
-    location.replace("../pages/result.html");
-
 }
 
 function displayMarkedQuestion(questionIndex) {
@@ -159,17 +172,9 @@ function displayMarkedQuestion(questionIndex) {
 }
 
 window.onload = function () {
-
-    const quizCompleted = sessionStorage.getItem("quizCompleted");
-    if (quizCompleted === "true") {
-        finishQuiz();
-        quizSection.style.display = "none";
-        markedQuestions.style.display = "none";
-    } else {
-        shuffleQuestions();
-        displayCurrentQuestion();
-        startTimer();
-    }
+    shuffleQuestions();
+    displayCurrentQuestion();
+    startTimer();
 };
 
 function shuffleQuestions() {

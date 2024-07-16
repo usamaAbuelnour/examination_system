@@ -1,6 +1,8 @@
 import { changeInputFocus } from "../utils/changeInputFocus.js";
 
 changeInputFocus();
+sessionStorage.clear()
+
 
 let email, password;
 
