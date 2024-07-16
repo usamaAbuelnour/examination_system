@@ -103,8 +103,7 @@
     justify-content: space-around;
 }
 
-#content button,
-#question-number {
+#content button {
 
     appearance: button;
     background-color: #1899d6;
@@ -134,7 +133,6 @@
     white-space: nowrap;
 }
 
-#content button.mark,
 #content button.next,
 #content button.previous {
     background-color: #eceeef00;
@@ -142,12 +140,19 @@
     border: 1px solid #1cb0f6;
 }
 
-#content button.mark:after,
+
 #content button.next:after,
 #content button.previous:after {
     background-color: #fafdff00;
 }
 
+#content button.mark {
+    background-color: rgb(250, 164, 4);
+    color: #000;
+}
+#content button.mark::after {
+    background-color: rgb(254, 193, 81);
+}
 
 
 #content button.next:disabled,
@@ -155,8 +160,7 @@
     border-color: transparent;
 }
 
-#content button:after,
-#question-number:after {
+#content button:after {
     background-clip: padding-box;
     background-color: #1cb0f6;
     border: solid transparent;
@@ -205,17 +209,19 @@
 
 
 
-#question-number {
-    cursor: default;
+#content #question-number {
+    border: outset 2px #999;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
     width: 30px;
-    color: black;
-    font-size: 14px;
-    background-color: hsla(0, 100%, 99%, 0);
+    background-color: #eee;
 }
 
-#question-number::after {
-    background-color: rgba(245, 237, 237, 0);
-}
+
 
 .markside {
     text-align: start;
@@ -225,7 +231,7 @@
     margin: 1em 0.5em;
     padding: 0.5em;
     display: none;
-    height: 145px;
+    height: 150px;
     overflow: auto;
 }
 
@@ -243,9 +249,9 @@
 }
 
 .markside div p {
-    border: inset 3px;
+    border: groove 3px;
     border-radius: 4px;
-    padding: 0.3em 0.5em;
+    padding: 0.5em;
     cursor: pointer;
     font-weight: 500;
 }
@@ -264,8 +270,10 @@
 }
 
 #content .markside button:after {
-    background-color: red;
+    background-color: hsl(0, 85%, 50%);
 }
+
+
 
 @media (min-width: 450px) {
 

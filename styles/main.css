@@ -120,11 +120,11 @@
     border: 1px solid #d69e31;
     color: #85592e;
     cursor: pointer;
-    float: left;
+    /* float: left; */
     font: bold 15px Helvetica, Arial, sans-serif;
     height: 35px;
-    margin: 20px 0 35px 15px;
-    position: relative;
+    /* margin: 20px 0 35px 15px; */
+    /* position: relative; */
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
     width: 120px;
 }
@@ -160,7 +160,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fec151', endColorstr='#fee79a', GradientType=0);
 }
 
-#content form div a#Register {
+/* #content form div a#Register {
     font-size: 14px;
     text-decoration: none;
     border: 2px solid;
@@ -178,25 +178,40 @@
     padding: 5px;
     border-radius: 72px;
     color: #622222e6;
-}
+} */
 
 #content form div a {
     color: #004a80;
-    float: right;
-    font-size: 12px;
-    margin: 30px 15px 0 0;
+    font-size: 14px;
     text-decoration: underline;
+}
+#content form div a:hover {
+    color: #004b80bb;
+}
+
+#submit-register-wrapper {
+    /* border: solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em 0;
+    
 }
 
 #errorContainer {
+    /* border: solid; */
     border-radius: 5px;
     display: inline-block;
-    position: relative;
-    bottom: 0.5em;
     font-size: 1rem;
     color: rgb(255, 0, 0);
     text-transform: lowercase;
     font-weight: bold;
+    width: 100px;
+    height: 20px;
+}
+
+#errorMessage {
+    /* margin: 0; */
 }
 
 #spinner {

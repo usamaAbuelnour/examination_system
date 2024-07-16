@@ -26,17 +26,23 @@
                             id="password"
                         />
                     </div>
-                    <div>
+                    <div id="submit-register-wrapper">
                         <input type="submit" value="Log in" />
+                        <div id="errorContainer">
+                            <p id="errorMessage"></p>
+                            <div id="spinner" class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
                         <a id="Register" href="./pages/register.html">Register</a>
                     </div>
                 </form>
-                <div id="errorContainer">
+                <!-- <div id="errorContainer">
                     <p id="errorMessage"></p>
                     <div id="spinner" class="spinner-border" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                </div>
+                </div> -->
             </section>
         </div>
         <script type="module" src="./scripts/login.js"></script>
